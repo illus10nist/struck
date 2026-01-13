@@ -1,0 +1,78 @@
+python zoning_agent.py --kb zp_kb_vaassen.json --query "I am a new immigrant to the Netherlands and want to buy a house. My partner and I are going to become parents, and we would like to build a small outbuilding to give ourselves some more space. I heard about this provision in the Netherlands where we can build such outbuildings without a permit - and I want to know if my plan would fall into that category at these addresses. Plan: My outbuilding would be 20m², 3m high and used primarily as a living space and subordinate to the main house."
+{
+  "answer": "CONDITIONAL",
+  "permit_status": "PERMIT_REQUIRED_OR_UNKNOWN",
+  "reasoning_summary": [
+    "The evidence does not explicitly confirm permit-free ('vergunningvrije') status for building a small outbuilding.",
+    "The outbuilding must be functionally and spatially subordinate to the main building to be considered a bijbehorend bouwwerk.",    
+    "Location within 'Waarde - Archeologie' allows for building if under 100m².",
+    "The zoning rules for 'Tuin' allow buildings if marked as 'bijgebouwen.'",
+    "No explicit evidence confirming permit-free allowance under conditions of placement, boundary distance, and within bouwvlak."     
+  ],
+  "minor_changes": [
+    "Placement of the outbuilding with consideration to boundary conditions and location within a bouwvlak might allow permit-free building.",
+    "Checking if the area is explicitly indicated as permit-free for outbuildings within local regulations."
+  ],
+  "assumptions": [
+    "The proposed outbuilding will be within 20m² and 3m high as stated.",
+    "The planned use as living space is subordinate to the main dwelling.",
+    "Local government interpretations and additional undeclared zoning restrictions might influence final decisions."
+  ],
+  "citations": [
+    "4ebb75951439",
+    "5cd9a5d9d5f9",
+    "c81712ab21d2",
+  ]
+}
+
+python zoning_agent.py --kb .\zp_kb_amsterdam.json --query "I am a new immigrant to the Netherlands and want to buy a house. My partner and I are going to become parents, and we would like to build a small outbuilding to give ourselves some more space. I heard about this provision in the Netherlands where we can build such outbuildings without a permit - and I want to know if my plan would fall into that category at these addresses. Plan: My outbuilding would be 20m², 3m high and used primarily as a living space and subordinate to the main house."
+{
+  "answer": "NO",
+  "permit_status": "PERMIT_REQUIRED_OR_UNKNOWN",
+  "reasoning_summary": [
+    "The area planned for the outbuilding is 'Waarde - Landschap 1', where the maximum allowed area for an outbuilding is 9 m².",      
+    "The intended outbuilding size is 20 m², exceeding the allowable limit.",
+    "A green roof and water retention requirements are mandatory for permissible buildings in this zone, which has not been addressed.",
+    "The regulations permit only one detached outbuilding per lot with specific conditions, which are unmet in the plan."
+  ],
+  "minor_changes": [
+    "Reduce the outbuilding size to 9 m².",
+    "Add a green roof and water retention features as per local requirements."
+  ],
+  "assumptions": [
+    "The construction is planned within 'Waarde - Landschap 1' designated area.",
+    "Current conditions of the construction site do not meet existing exceptions or allowances beyond the general rules."
+  ],
+  "citations": [
+    "9200d912ab6e",
+    "826efe741a01"
+  ]
+}
+
+python zoning_agent.py --kb .\zp_kb_ommen.json --query "I am a new immigrant to the Netherlands and want to buy a house. My partner and I are going to become parents, and we would like to build a small outbuilding to give ourselves some more space. I heard about this provision in the Netherlands where we can build such outbuildings without a permit - and I want to know if my plan would fall into that category at these addresses. Plan: My outbuilding would be 20m², 3m high and used primarily as a living space and subordinate to the main house."
+{
+  "answer": "CONDITIONAL",
+  "permit_status": "PERMIT_REQUIRED_OR_UNKNOWN",
+  "reasoning_summary": [
+    "The 'Waterstaat - Waterkering' designation restricts building to non-building structures, limiting permits.",
+    "The 'Waarde - Archeologische verwachtingswaarde' area needs a permit unless no archaeological impact is demonstrated.",
+    "The intent is for a living space, which often requires stricter conditions.",
+    "The location is within 'Woongebied', allowing outbuildings if in line with specific limits.",
+    "Evidence doesn't confirm 'permit-free' status explicitly."
+  ],
+  "minor_changes": [
+    "Confirm non-impact on archaeological values for potential permit-free status in 'Archeologische verwachtingswaarde' area.",       
+    "Seek advice from water management authority for 'Waterkering' built permission."
+  ],
+  "assumptions": [
+    "The outbuilding would not affect archaeological values.",
+    "It's located appropriately within any 'bouwvlak' or building limitations."
+  ],
+  "citations": [
+    "chunk_id=862571644c4e",
+    "chunk_id=00e77cf85958",
+    "chunk_id=5cb62afbb6e3",
+    "chunk_id=370211958232"
+  ]
+}
+
